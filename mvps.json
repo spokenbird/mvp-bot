@@ -1,0 +1,188 @@
+{
+  "Amon Ra": {
+    "names": ["Amon Ra"],
+    "map": "moc_pryd06",
+    "minSpawn": 60,
+    "maxSpawn": 70
+  },
+  "Bacsojin": {
+    "names": ["White Lady", "Bascojin"],
+    "map": "lou_dun03",
+    "minSpawn": 117,
+    "maxSpawn": 127
+  },
+  "Baphomet": {
+    "names": ["Baphomet", "Bapho"],
+    "map": "prt_maze03",
+    "minSpawn": 120,
+    "maxSpawn": 130
+  },
+  "Bio 3": {
+    "names": ["Bio 3"],
+    "map": "lhz_dun03",
+    "minSpawn": 100,
+    "maxSpawn": 130
+  },
+  "Dark Lord": {
+    "names": ["Dark Lord", "DL"],
+    "map": "gld_dun04",
+    "minSpawn": 480,
+    "maxSpawn": 490
+  },
+  "Detarderous": {
+    "names": ["Detarderous", "Detard", "Detale"],
+    "map": "abyss_03",
+    "minSpawn": 180,
+    "maxSpawn": 190
+  },
+  "Doppelganger": {
+    "names": ["Doppelganger", "Dopple"],
+    "map": "gef_dun02",
+    "minSpawn": 120,
+    "maxSpawn": 130
+  },
+  "Dracula": {
+    "names": ["Dracula", "Drac"],
+    "map": "gef_dun01",
+    "minSpawn": 60,
+    "maxSpawn": 70
+  },
+  "Drake": {
+    "names": ["Drake"],
+    "map": "treasure02",
+    "minSpawn": 120,
+    "maxSpawn": 130
+  },
+  "Eddga": {
+    "names": ["Eddga"],
+    "map": "gld_dun01",
+    "minSpawn": 480,
+    "maxSpawn": 490
+  },
+  "Evil Snake Lord": {
+    "names": ["Evil Snake Lord"],
+    "map": "gon_dun03",
+    "minSpawn": 94,
+    "maxSpawn": 104
+  },
+  "Garm": {
+    "names": ["Garm", "Hatii"],
+    "map": "xmas_fild01",
+    "minSpawn": 120,
+    "maxSpawn": 130
+  },
+  "Golden Thief Bug": {
+    "names": ["Golden Thief Bug", "GTB"],
+    "map": "prt_sewb4",
+    "minSpawn": 60,
+    "maxSpawn": 70
+  },
+  "Incantation Samurai": {
+    "names": ["Incantation Samurai", "Samurai Specter", "Samurai", "Specter"],
+    "map": "ama_dun03",
+    "minSpawn": 91,
+    "maxSpawn": 101
+  },
+  "Kiel D-01": {
+    "names": ["Kiel D-01", "Kiel"],
+    "map": "kh_dun02",
+    "minSpawn": 120,
+    "maxSpawn": 180
+  },
+  "Stormy Knight": {
+    "names": ["Stormy Knight", "Stormy"],
+    "map": "xmas_dun02",
+    "minSpawn": 60,
+    "maxSpawn": 70
+  },
+  "Lady Tanee": {
+    "names": ["Lady Tanee", "Tanee"],
+    "map": "ayo_dun02",
+    "minSpawn": 420,
+    "maxSpawn": 430
+  },
+  "Lord of Death": {
+    "names": ["Lord of Death", "Lord of Dead", "LOD"],
+    "map": "niflheim",
+    "minSpawn": 133,
+    "maxSpawn": 133
+  },
+  "Maya": {
+    "names": ["Maya"],
+    "map": "anthell02",
+    "minSpawn": 120,
+    "maxSpawn": 130
+  },
+  "Mistress": {
+    "names": ["Mistress", "Missy"],
+    "map": "mjolnir_04",
+    "minSpawn": 120,
+    "maxSpawn": 130
+  },
+  "Moonlight Flower": {
+    "names": ["Moonlight Flower", "Moonie"],
+    "map": "pay_dun04",
+    "minSpawn": 60,
+    "maxSpawn": 70
+  },
+  "Orc Hero": {
+    "names": ["Orc Hero", "OH"],
+    "map": "gef_fild02",
+    "minSpawn": 1440,
+    "maxSpawn": 1450
+  },
+  "Orc Lord": {
+    "names": ["Orc Lord", "OL"],
+    "map": "gef_fild10",
+    "minSpawn": 120,
+    "maxSpawn": 130
+  },
+  "Osiris": {
+    "names": ["Osiris", "Osi"],
+    "map": "moc_pryd04",
+    "minSpawn": 60,
+    "maxSpawn": 70
+  },
+  "Pharaoh": {
+    "names": ["Pharaoh", "Pharo"],
+    "map": "in_sphinx5",
+    "minSpawn": 60,
+    "maxSpawn": 70
+  },
+  "Phreeoni": {
+    "names": ["Phreeoni", "Phree"],
+    "map": "moc_fild17",
+    "minSpawn": 120,
+    "maxSpawn": 130
+  },
+  "RSX 0806": {
+    "names": ["RSX O8O6", "RSX"],
+    "map": "ein_dun02",
+    "minSpawn": 125,
+    "maxSpawn": 135
+  },
+  "Tao Gunka": {
+    "names": ["Tao Gunka", "Tao"],
+    "map": "beach_dun",
+    "minSpawn": 300,
+    "maxSpawn": 310
+  },
+  "Turtle General": {
+    "names": ["Turtle General", "TG"],
+    "map": "tur_dun04",
+    "minSpawn": 60,
+    "maxSpawn": 70
+  },
+  "Vesper": {
+    "names": ["Vesper"],
+    "map": "jupe_core",
+    "minSpawn": 120,
+    "maxSpawn": 130
+  },
+  "Ygnizem": {
+    "names": ["Ygnizem", "Bio 2"],
+    "map": "lhz_dun02",
+    "minSpawn": 120,
+    "maxSpawn": 130
+  }
+}
