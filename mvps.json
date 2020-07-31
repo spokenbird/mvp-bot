@@ -1,6 +1,6 @@
 {
   "Amon Ra": {
-    "names": ["Amon Ra"],
+    "names": ["Amon Ra", "Amun Ra"],
     "map": "moc_pryd06",
     "minSpawn": 60,
     "maxSpawn": 70
@@ -36,7 +36,7 @@
     "maxSpawn": 190
   },
   "Doppelganger": {
-    "names": ["Doppelganger", "Dopple"],
+    "names": ["Doppelganger", "Doppel", "Dopple"],
     "map": "gef_dun02",
     "minSpawn": 120,
     "maxSpawn": 130
@@ -60,13 +60,13 @@
     "maxSpawn": 490
   },
   "Evil Snake Lord": {
-    "names": ["Evil Snake Lord"],
+    "names": ["Evil Snake Lord", "ESL", "Snake Lord"],
     "map": "gon_dun03",
     "minSpawn": 94,
     "maxSpawn": 104
   },
   "Garm": {
-    "names": ["Garm", "Hatii"],
+    "names": ["Garm", "Hatii", "Haitii"],
     "map": "xmas_fild01",
     "minSpawn": 120,
     "maxSpawn": 130
@@ -102,7 +102,7 @@
     "maxSpawn": 430
   },
   "Lord of Death": {
-    "names": ["Lord of Death", "Lord of Dead", "LOD"],
+    "names": ["Lord of Death", "Lord of Dead", "LOD", "Lord of the Dead"],
     "map": "niflheim",
     "minSpawn": 133,
     "maxSpawn": 133

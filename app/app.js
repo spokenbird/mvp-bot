@@ -12,12 +12,14 @@ client.once('ready', () => {
 client.on('message', input => {
     const message = input.content;
     if (Bot.commandIsValid(message) && !input.author.bot) {
-        switch(Bot.checkCommand(message).commandPrefix) {
+        const command = Bot.checkCommand(message);
+        switch(command.commandPrefix) {
             case "timer":
-                Bot.setTimer();
+                Bot.setTimer(command);
                 break;
             case "help":
                 input.channel.send(helpEmbed);
+                break;
             default:
                 console.log("The command is ", Bot.checkCommand(message));
         }
