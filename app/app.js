@@ -16,7 +16,12 @@ client.on('message', input => {
         switch(command.commandPrefix) {
             case "timer":
                 const response = Bot.setTimer(command)
-                input.channel.send(response);
+                input.channel.send(response.respawnMessage);
+                async function wait() {
+                    await Bot.sleep(response.waitTime);
+                    input.channel.send(`${input.author} \n ${response.respawnReminderMessage}`);
+                }
+                wait();
                 break;
             case "help":
                 input.channel.send(helpEmbed);

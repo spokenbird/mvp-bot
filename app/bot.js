@@ -21,13 +21,21 @@ class Bot {
 
     static setTimer(command) {
         const userInputMvp = command.args[0].slice(1, -1);
-        const userInputTime = command.args[1];
+        let userInputTime = command.args[1];
         const isSpelledCorrectly = dictionary.spellCheck(userInputMvp)
         if (isSpelledCorrectly) {
             const mvpInfo = Bot.getMvpByName(userInputMvp);
+            const startTime = moment.utc(userInputTime, "HH:mm a").format("HH:mm a");
             const mvpRespawnTime = moment.utc(userInputTime, "HH:mm a").add(mvpInfo.minSpawn, "minutes").format("HH:mm a");
-            console.log("respawn time is ", mvpRespawnTime);
-            return `${mvpInfo.names[0]} will respawn at ${mvpRespawnTime} PST. I will remind you 10 minutes before ${mvpInfo.names[0]} respawns.`;
+            const respawnReminderTime = moment.utc(userInputTime, "HH:mm a").add(mvpInfo.minSpawn, "minutes").subtract("10", "minutes").format("HH:mm a");
+            const respawnMessage = `${mvpInfo.names[0]} will respawn at ${mvpRespawnTime} PST. I will remind you 10 minutes before ${mvpInfo.names[0]} respawns.`;
+            const respawnReminderMessage = `${mvpInfo.names[0]} will respawn at ${mvpRespawnTime} PST.`;
+            const waitTime = moment
+                .duration(moment(respawnReminderTime, "HH:mm a")
+                .diff(moment(startTime, "HH:mm a"))
+                ).asMilliseconds();
+            const response = { respawnMessage, respawnReminderMessage, respawnReminderTime, mvpInfo, waitTime };
+            return response;
         } else {
             const suggestionFromDict = dictionary.getSuggestions(userInputMvp, 1, 2)[0];
             const suggestions = Bot.getMvpByName(suggestionFromDict).names
@@ -57,6 +65,11 @@ class Bot {
                 if (name.toLowerCase() === mvpName.toLowerCase()) return mvpInfo;
             }
         }
+    }
+
+    static sleep(timeInMiliSeconds) {
+        console.log('here');
+        return new Promise(resolve => setTimeout(resolve, timeInMiliSeconds));
     }
 }
 
