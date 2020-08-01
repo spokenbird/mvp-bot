@@ -21,26 +21,41 @@ class Bot {
 
     static setTimer(command) {
         const userInputMvp = command.args[0].slice(1, -1);
+        const userInputTime = command.args[1];
         const isSpelledCorrectly = dictionary.spellCheck(userInputMvp)
         if (isSpelledCorrectly) {
-            for (const mvp in mvps) {
-                const mvpInfo = mvps[mvp];
-                for (const name of mvpInfo.names) {
-                    if (name === userInputMvp) console.log(userInputMvp);
-                }
-            }
+            const mvpInfo = Bot.getMvpByName(userInputMvp);
+            const mvpRespawnTime = moment.utc(userInputTime, "HH:mm a").add(mvpInfo.minSpawn, "minutes").format("HH:mm a");
+            console.log("respawn time is ", mvpRespawnTime);
+            return `${mvpInfo.names[0]} will respawn at ${mvpRespawnTime} PST. I will remind you 10 minutes before ${mvpInfo.names[0]} respawns.`;
         } else {
-            const suggestions = dictionary.getSuggestions(userInputMvp, 5, 2);
-            let response = `I don't have an MVP with that name, did you mean ${suggestions[0]}?`
+            const suggestionFromDict = dictionary.getSuggestions(userInputMvp, 1, 2)[0];
+            const suggestions = Bot.getMvpByName(suggestionFromDict).names
+            let response = `I don't have an MVP with that name, did you mean \`${suggestions[0]}?\``;
+            let youCanAlsoSay = " You can also say";
+
             if (suggestions.length > 1) {
-                let prefix = " You can also say"
                 for (let i = 1; i < suggestions.length; i++) {
-                    prefix.concat(`${suggestions[i]}`);
+                    if (i === suggestions.length - 1) {
+                        youCanAlsoSay = youCanAlsoSay.concat(`or \`${suggestions[i]}\``);
+                    } else if (i === 1) {
+                        youCanAlsoSay = youCanAlsoSay.concat(` \`${suggestions[i]}\``);
+                    } else {
+                        youCanAlsoSay = youCanAlsoSay.concat(`, \`${suggestions[i]}\``);
+                    }
                 }
             }
 
-            console.log(response.concat(prefix));
-            return suggestions + prefix;
+            return response + youCanAlsoSay + ".";
+        }
+    }
+
+    static getMvpByName(mvpName) {
+        for (const mvp in mvps) {
+            const mvpInfo = mvps[mvp];
+            for (const name of mvpInfo.names) {
+                if (name.toLowerCase() === mvpName.toLowerCase()) return mvpInfo;
+            }
         }
     }
 }

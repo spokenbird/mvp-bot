@@ -15,7 +15,8 @@ client.on('message', input => {
         const command = Bot.checkCommand(message);
         switch(command.commandPrefix) {
             case "timer":
-                Bot.setTimer(command);
+                const response = Bot.setTimer(command)
+                input.channel.send(response);
                 break;
             case "help":
                 input.channel.send(helpEmbed);
