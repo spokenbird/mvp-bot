@@ -1,6 +1,7 @@
+require('dotenv').config()
 const Discord = require('discord.js');
 const Bot = require("./bot");
-const { token } = require('../config.json');
+const { token } = process.env.TOKEN;
 const { helpEmbed } = require("./embeds");
 const client = new Discord.Client();
 
