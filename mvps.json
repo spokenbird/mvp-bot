@@ -2,7 +2,7 @@
   "Amon Ra": {
     "names": ["Amon Ra", "Amun Ra"],
     "map": "moc_pryd06",
-    "minSpawn": 13,
+    "minSpawn": 60,
     "maxSpawn": 70
   },
   "Bacsojin": {
@@ -14,13 +14,13 @@
   "Baphomet": {
     "names": ["Baphomet", "Bapho"],
     "map": "prt_maze03",
-    "minSpawn": 11,
+    "minSpawn": 120,
     "maxSpawn": 130
   },
   "Bio 3": {
     "names": ["Bio 3"],
     "map": "lhz_dun03",
-    "minSpawn": 15,
+    "minSpawn": 120,
     "maxSpawn": 130
   },
   "Dark Lord": {
@@ -56,8 +56,8 @@
   "Eddga": {
     "names": ["Eddga"],
     "map": "gld_dun01",
-    "minSpawn": 480,
-    "maxSpawn": 490
+    "minSpawn": 120,
+    "maxSpawn": 130
   },
   "Evil Snake Lord": {
     "names": ["Evil Snake Lord", "ESL", "Snake Lord"],
