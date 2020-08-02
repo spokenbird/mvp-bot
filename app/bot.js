@@ -12,7 +12,7 @@ class Bot {
     }
 
     static checkCommand(message) {
-        const args = message.toLowerCase().slice(prefix.length).trim().split(/ +/);
+        const args = Bot.splitArgs(message.slice(1));
         const commandPrefix = args.shift().toLowerCase();
         const command = { commandPrefix, args };
 
@@ -20,7 +20,7 @@ class Bot {
     }
 
     static setTimer(command) {
-        const userInputMvp = command.args[0].slice(1, -1);
+        const userInputMvp = command.args[0];
         let userInputTime = command.args[1];
         const isSpelledCorrectly = dictionary.spellCheck(userInputMvp)
         if (isSpelledCorrectly) {
@@ -39,7 +39,7 @@ class Bot {
         } else {
             const suggestionFromDict = dictionary.getSuggestions(userInputMvp, 1, 2)[0];
             const suggestions = Bot.getMvpByName(suggestionFromDict).names
-            let response = `I don't have an MVP with that name, did you mean \`${suggestions[0]}?\``;
+            let suggestionMessage = `I don't have an MVP with that name, did you mean \`${suggestions[0]}?\``;
             let youCanAlsoSay = " You can also say";
 
             if (suggestions.length > 1) {
@@ -54,7 +54,9 @@ class Bot {
                 }
             }
 
-            return response + youCanAlsoSay + ".";
+            suggestionMessage = suggestionMessage + youCanAlsoSay + ".";
+            const response = { suggestionMessage };
+            return response;
         }
     }
 
@@ -68,8 +70,36 @@ class Bot {
     }
 
     static sleep(timeInMiliSeconds) {
-        console.log('here');
         return new Promise(resolve => setTimeout(resolve, timeInMiliSeconds));
+    }
+
+    static splitArgs(message) {
+        const argsArr = [];
+        let currentArg = [];
+        let inQuotes = false;
+        for (let i = 0; i < message.length; i++) {
+            const char = message[i];
+            if (char === '"') {
+                inQuotes = !inQuotes;
+                continue;
+            }
+            if (inQuotes) {
+                currentArg.push(char);
+            } else {
+                if (char === " ") {
+                    argsArr.push(currentArg.join(""));
+                    currentArg = [];
+                } else if (i === message.length - 1) {
+                    currentArg.push(char);
+                    argsArr.push(currentArg.join(""));
+                    currentArg = [];
+                } else {
+                    currentArg.push(char);
+                }
+            }
+        }
+
+        return argsArr;
     }
 }
 

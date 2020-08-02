@@ -16,18 +16,27 @@ client.on('message', input => {
         switch(command.commandPrefix) {
             case "timer":
                 const response = Bot.setTimer(command)
-                input.channel.send(response.respawnMessage);
-                async function wait() {
-                    await Bot.sleep(response.waitTime);
-                    input.channel.send(`${input.author} \n ${response.respawnReminderMessage}`);
+                const hasImage = input.attachments.size > 0;
+                if (!response.suggestionMessage) {
+                    input.channel.send(response.respawnMessage);
+                    async function wait() {
+                        await Bot.sleep(response.waitTime);
+                        input.channel.send(`${input.author} \n ${response.respawnReminderMessage}`);
+                        if (hasImage) {
+                            const image = input.attachments.array()[0].url;
+                            input.channel.send(image);
+                        }
+                    }
+                    wait();
+                } else {
+                    input.channel.send(response.suggestionMessage);
                 }
-                wait();
                 break;
             case "help":
                 input.channel.send(helpEmbed);
                 break;
             default:
-                console.log("The command is ", Bot.checkCommand(message));
+                input.channel.send("I don't recognize the command you've given, try using !help.");
         }
     }
 });

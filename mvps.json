@@ -2,7 +2,7 @@
   "Amon Ra": {
     "names": ["Amon Ra", "Amun Ra"],
     "map": "moc_pryd06",
-    "minSpawn": 12,
+    "minSpawn": 13,
     "maxSpawn": 70
   },
   "Bacsojin": {
@@ -20,7 +20,7 @@
   "Bio 3": {
     "names": ["Bio 3"],
     "map": "lhz_dun03",
-    "minSpawn": 12,
+    "minSpawn": 15,
     "maxSpawn": 130
   },
   "Dark Lord": {
