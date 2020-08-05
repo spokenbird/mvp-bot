@@ -27,7 +27,7 @@ class Bot {
             const mvpInfo = Bot.getMvpByName(userInputMvp);
             const mvpRespawnTime24 = moment.tz(userInputTime,"HH:mm a", "America/Los_Angeles").add(mvpInfo.minSpawn, "minutes").format("HH:mm a");
             const mvRespawnTime12 = moment.tz(mvpRespawnTime24,"HH:mm a", "America/Los_Angeles").format("h:mm a");
-            const respawnReminderTime = moment.tz(userInputTime,"HH:mm a", "America/Los_Angeles").add(mvpInfo.minSpawn, "minutes").subtract("10", "minutes").subtract("1", "day").format();
+            const respawnReminderTime = moment.tz(userInputTime,"HH:mm a", "America/Los_Angeles").add(mvpInfo.minSpawn, "minutes").subtract("10", "minutes").format();
             console.log("The respawn reminder time is ", respawnReminderTime);
             const respawnMessage = `${mvpInfo.names[0]} will respawn at ${mvpRespawnTime24} (${mvRespawnTime12}) PST. I will remind you 10 minutes before ${mvpInfo.names[0]} respawns.`;
             const respawnReminderMessage = `${mvpInfo.names[0]} will respawn at ${mvpRespawnTime24} PST.`;
