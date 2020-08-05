@@ -25,16 +25,13 @@ class Bot {
         const isSpelledCorrectly = dictionary.spellCheck(userInputMvp)
         if (isSpelledCorrectly) {
             const mvpInfo = Bot.getMvpByName(userInputMvp);
-            const startTime = moment.utc(userInputTime, "HH:mm a").format("HH:mm a");
-            const mvpRespawnTime = moment.utc(userInputTime, "HH:mm a").add(mvpInfo.minSpawn, "minutes").format("HH:mm a");
-            const respawnReminderTime = moment.utc(userInputTime, "HH:mm a").add(mvpInfo.minSpawn, "minutes").subtract("10", "minutes").format("HH:mm a");
-            const respawnMessage = `${mvpInfo.names[0]} will respawn at ${mvpRespawnTime} PST. I will remind you 10 minutes before ${mvpInfo.names[0]} respawns.`;
-            const respawnReminderMessage = `${mvpInfo.names[0]} will respawn at ${mvpRespawnTime} PST.`;
-            const waitTime = moment
-                .duration(moment(respawnReminderTime, "HH:mm a")
-                .diff(moment(startTime, "HH:mm a"))
-                ).asMilliseconds();
-            const response = { respawnMessage, respawnReminderMessage, respawnReminderTime, mvpInfo, waitTime };
+            const mvpRespawnTime24 = moment.tz(userInputTime,"HH:mm a", "America/Los_Angeles").add(mvpInfo.minSpawn, "minutes").format("HH:mm a");
+            const mvRespawnTime12 = moment.tz(mvpRespawnTime24,"HH:mm a", "America/Los_Angeles").format("h:mm a");
+            const respawnReminderTime = moment.tz(userInputTime,"HH:mm a", "America/Los_Angeles").add(mvpInfo.minSpawn, "minutes").subtract("10", "minutes").subtract("1", "day").format();
+            console.log("The respawn reminder time is ", respawnReminderTime);
+            const respawnMessage = `${mvpInfo.names[0]} will respawn at ${mvpRespawnTime24} (${mvRespawnTime12}) PST. I will remind you 10 minutes before ${mvpInfo.names[0]} respawns.`;
+            const respawnReminderMessage = `${mvpInfo.names[0]} will respawn at ${mvpRespawnTime24} PST.`;
+            const response = { respawnMessage, respawnReminderMessage, respawnReminderTime, mvpInfo };
             return response;
         } else {
             const suggestionFromDict = dictionary.getSuggestions(userInputMvp, 1, 2)[0];
@@ -69,9 +66,9 @@ class Bot {
         }
     }
 
-    static sleep(timeInMiliSeconds) {
-        return new Promise(resolve => setTimeout(resolve, timeInMiliSeconds));
-    }
+    // static sleep(timeInMiliSeconds) {
+    //     return new Promise(resolve => setTimeout(resolve, timeInMiliSeconds));
+    // }
 
     static splitArgs(message) {
         const argsArr = [];

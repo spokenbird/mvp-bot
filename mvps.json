@@ -167,6 +167,12 @@
     "minSpawn": 300,
     "maxSpawn": 310
   },
+  "Test": {
+    "names": ["Test", "Testie"],
+    "map": "beach_dun",
+    "minSpawn": 70,
+    "maxSpawn": 11
+  },
   "Turtle General": {
     "names": ["Turtle General", "TG"],
     "map": "tur_dun04",
