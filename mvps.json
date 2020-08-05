@@ -26,8 +26,8 @@
   "Dark Lord": {
     "names": ["Dark Lord", "DL"],
     "map": "gld_dun04",
-    "minSpawn": 480,
-    "maxSpawn": 490
+    "minSpawn": 60,
+    "maxSpawn": 70
   },
   "Detarderous": {
     "names": ["Detarderous", "Detard", "Detale"],
@@ -128,8 +128,8 @@
   "Orc Hero": {
     "names": ["Orc Hero", "OH"],
     "map": "gef_fild02",
-    "minSpawn": 1440,
-    "maxSpawn": 1450
+    "minSpawn": 60,
+    "maxSpawn": 70
   },
   "Orc Lord": {
     "names": ["Orc Lord", "OL"],
@@ -152,14 +152,14 @@
   "Phreeoni": {
     "names": ["Phreeoni", "Phree"],
     "map": "moc_fild17",
-    "minSpawn": 120,
-    "maxSpawn": 130
+    "minSpawn": 70,
+    "maxSpawn": 70
   },
   "RSX 0806": {
     "names": ["RSX O8O6", "RSX"],
     "map": "ein_dun02",
-    "minSpawn": 125,
-    "maxSpawn": 135
+    "minSpawn": 120,
+    "maxSpawn": 130
   },
   "Tao Gunka": {
     "names": ["Tao Gunka", "Tao"],
