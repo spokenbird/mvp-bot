@@ -30,7 +30,7 @@ class Bot {
             const respawnReminderTime = moment.tz(userInputTime,"HH:mm a", "America/Los_Angeles").add(mvpInfo.minSpawn, "minutes").subtract("10", "minutes").format();
             console.log("The respawn reminder time is ", respawnReminderTime);
             const respawnMessage = `${mvpInfo.names[0]} will respawn at ${mvpRespawnTime24} (${mvRespawnTime12}) PST. I will remind you 10 minutes before ${mvpInfo.names[0]} respawns.`;
-            const respawnReminderMessage = `${mvpInfo.names[0]} will respawn at ${mvpRespawnTime24} PST.`;
+            const respawnReminderMessage = `${mvpInfo.names[0]} will respawn at ${mvpRespawnTime24} (${mvRespawnTime12}) PST PST.`;
             const response = { respawnMessage, respawnReminderMessage, respawnReminderTime, mvpInfo };
             return response;
         } else {
@@ -65,10 +65,6 @@ class Bot {
             }
         }
     }
-
-    // static sleep(timeInMiliSeconds) {
-    //     return new Promise(resolve => setTimeout(resolve, timeInMiliSeconds));
-    // }
 
     static splitArgs(message) {
         const argsArr = [];
