@@ -31,10 +31,7 @@ client.on('message', input => {
                             }
                         });
                         const dateTime = new Date();
-                        console.log("current time is, ", dateTime);
-                        console.log("The jobs run time is, ", reminderDateTime);
                         reminderJob.start();
-                        console.log("is th job running? ", reminderJob.running);
                 } else {
                     input.channel.send(response.suggestionMessage);
                 }
