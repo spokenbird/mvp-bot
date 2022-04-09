@@ -14,7 +14,7 @@
     "cron": "^1.8.2",
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
-    "moment": "^2.27.0",
+    "moment": "^2.29.2",
     "simple-spellchecker": "^1.0.0"
   }
 }
